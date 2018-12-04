@@ -1,6 +1,5 @@
-package br.com.db1.db1start;
-
-import java.lang.String;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Texto {
 	public String maiusculas(String txt) { 
@@ -30,11 +29,32 @@ public class Texto {
 	public String retornarQuatroUltimas(String nome) {
 		return nome.substring(nome.length() - 4,nome.length());
 	}
+	
 	public String retornarAluno(String nome) {
-		return nome.replace(nome, "aluno" + nome.substring(7, nome.length()));
+		String resto = "";
+		int n = nome.indexOf(" ");
+		resto = "aluno" + nome.substring(n, nome.length());
+		return resto;
 	}
+	
 	public String frutaSeparadamente(String fruta) {
-		return fruta.replace(",", " ");
+		return fruta.replace(",", "");
+	}
+	public String textoVogais(String txt) {
+		String vogais = "";
+		for(int a = 0; a < txt.length();a++) {
+			if(txt.charAt(a) == 'a' || txt.charAt(a) == 'e' || txt.charAt(a) == 'i' || txt.charAt(a) == 'o' ||txt.charAt(a) == 'u') {
+				vogais += txt.charAt(a);
+			}
+		}
+		return vogais;
+	}
+	public String inversaoDeString(String txt) {
+		String invertido = "";
+		for(int b = (txt.length() - 1);b > 0;b--) {
+			invertido += txt.charAt(b);
+		}
+		return invertido;
 	}
 }
 
